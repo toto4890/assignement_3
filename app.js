@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 
 var dbConfig = require('./db/db.js');
 var mongoose = require('mongoose');
+require('./models/GraphData');
 mongoose.connect(dbConfig.url);
 
 var app = express();
@@ -19,7 +20,7 @@ app.set('view engine', 'jade');
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded());
+app.use(bodyParser.urlencoded()); 
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
