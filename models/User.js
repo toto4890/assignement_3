@@ -1,4 +1,4 @@
-//MLL -- add fields for the different auths
+//MLL - have to add fields for the different auths
 var mongoose = require('mongoose');
 
 module.exports = mongoose.model('User', {

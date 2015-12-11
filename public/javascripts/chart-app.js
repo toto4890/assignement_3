@@ -1,3 +1,4 @@
+//MLL - imported from assignment 1
 var app = angular.module('simple-chart', []);
 google.load("visualization", "1", {packages:["corechart"]});
 
