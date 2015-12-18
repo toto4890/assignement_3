@@ -70,11 +70,21 @@ module.exports = function(passport) {
 		})
 	);
 	
+	router.get('/login/linkedin',
+        passport.authenticate('linkedin'));
+
+
+	router.get('/login/linkedin/callback',
+		passport.authenticate('linkedin', {
+			successRedirect : '/home',
+			failureRedirect : '/'
+		})
+	);
+	
 	// route for google authentication and login
 	// different scopes while logging in
 	router.get('/login/google', 
-		passport.authenticate('google', { scope : 'email' }
-	));
+		passport.authenticate('google'));
 
 	// handle the callback after google has authenticated the user
 	router.get('/login/google/callback',
